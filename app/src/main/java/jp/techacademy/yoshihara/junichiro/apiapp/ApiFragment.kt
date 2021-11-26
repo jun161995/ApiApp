@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_api.*
 import okhttp3.*
@@ -43,6 +44,10 @@ class ApiFragment: Fragment() {
             }
             onClickDeleteFavorite = { // Adapterの処理をそのままActivityに通知する
                 fragmentCallback?.onDeleteFavorite(it.id)
+            }
+            // Itemをクリックしたとき
+            onClickItem = {
+                fragmentCallback?.onClickItem(it)
             }
         }
         // RecyclerViewの初期化
