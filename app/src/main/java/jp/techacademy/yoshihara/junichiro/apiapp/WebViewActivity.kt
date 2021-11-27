@@ -17,6 +17,7 @@ import jp.techacademy.yoshihara.junichiro.apiapp.MainActivity.Companion as MainA
 class WebViewActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_web_view)
         var shop = intent.getSerializableExtra("shop") as Shop
         val urlCoupon = if (shop.couponUrls.sp.isNotEmpty()) shop.couponUrls.sp else shop.couponUrls.pc
         webView.loadUrl(urlCoupon)
@@ -24,14 +25,14 @@ class WebViewActivity: AppCompatActivity() {
         if (isFavorite) {
             favoriteButton.text = "お気に入り解除"
         } else {
-            removefavoriteButton.text = "お気に入りに登録"
+            favoriteButton.text = "お気に入りに登録"
         }
 
         favoriteButton.setOnClickListener {
             isFavorite = FavoriteShop.findBy(shop.id) != null
             if (isFavorite) {
                 FavoriteShop.delete(shop.id)
-                removefavoriteButton.text = "お気に入りに登録"
+                favoriteButton.text = "お気に入りに登録"
             } else {
                 FavoriteShop.insert(FavoriteShop().apply {
                     id = shop.id
@@ -40,6 +41,7 @@ class WebViewActivity: AppCompatActivity() {
                     address = shop.address
                     url = urlCoupon
                 })
+
                 favoriteButton.text = "お気に入り解除"
             }
         }

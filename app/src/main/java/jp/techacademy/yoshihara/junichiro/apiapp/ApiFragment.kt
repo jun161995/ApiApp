@@ -35,6 +35,11 @@ class ApiFragment: Fragment() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        updateView()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_api, container, false) // fragment_api.xmlが反映されたViewを作成して、returnします
     }
@@ -85,7 +90,9 @@ class ApiFragment: Fragment() {
     }
 
     fun updateView() { // お気に入りが削除されたときの処理（Activityからコールされる）
-        recyclerView.adapter?.notifyDataSetChanged() // RecyclerViewのAdapterに対して再描画のリクエストをする
+
+            recyclerView.adapter?.notifyDataSetChanged()
+         // RecyclerViewのAdapterに対して再描画のリクエストをする
     }
 
     private fun updateData(isAdd: Boolean = false) {

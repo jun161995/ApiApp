@@ -20,6 +20,10 @@ class FavoriteFragment: Fragment() {
             fragmentCallback = context
         }
     }
+    override fun onStart() {
+        super.onStart()
+        updateData()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_favorite, container, false) // fragment_api.xmlが反映されたViewを作成して、returnします

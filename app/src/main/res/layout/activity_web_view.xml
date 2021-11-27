@@ -23,14 +23,6 @@
         android:layout_centerHorizontal="true"
         android:onClick="Categories"/>
 
-    <Button
-        android:id="@+id/removefavoriteButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="お気に入り解除"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="Categories"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

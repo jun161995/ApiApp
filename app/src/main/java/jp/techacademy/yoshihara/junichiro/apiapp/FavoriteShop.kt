@@ -1,10 +1,13 @@
 package jp.techacademy.yoshihara.junichiro.apiapp
 
+import android.util.Log
 import io.realm.Realm
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
+import java.io.Serializable
 
-open class FavoriteShop: RealmObject() {
+
+open class FavoriteShop: RealmObject() , Serializable {
     @PrimaryKey
     var id: String = ""
     var imageUrl: String = ""
@@ -32,6 +35,7 @@ open class FavoriteShop: RealmObject() {
 
         fun insert(favoriteShop: FavoriteShop) = // お気に入り追加
             Realm.getDefaultInstance().executeTransaction {
+                Log.d("test", "insert test")
                 it.insertOrUpdate(favoriteShop)
             }
 
