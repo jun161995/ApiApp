@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">ApiApp</string>
+    <string name="app_name">八重洲ランチスタンプラリー</string>
 
     <!-- TabLayoutのタイトル -->
-    <string name="tab_title_api">新着順</string>
-    <string name="tab_title_favorite">お気に入り</string>
+    <string name="tab_title_api">一覧</string>
+    <string name="tab_title_favorite">行った</string>
 
     <!-- API通信i関連 -->
     <string name="base_url">https://webservice.recruit.co.jp/hotpepper/gourmet/v1/</string>
     <string name="api_key">03f2eda95a0addb6</string>
-    <string name="api_keyword">ランチ</string>
+    <string name="api_keyword">八重洲</string>
 
     <!-- Favorite関連 -->
     <string name="delete_favorite_dialog_title">お気に入りの削除</string>
